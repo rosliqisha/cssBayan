@@ -6,3 +6,70 @@
 body {
     background-color: bisque;
 }
+
+.main {
+    margin: 0 auto;
+    background-color: white;
+    max-width: 65vh;
+}
+
+.title {
+    text-align: center;
+}
+
+.memes_row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.meme_image {
+    padding: min(max(1.25vw, .5rem), 1.5rem);
+    max-width: 100%;
+    height: auto;
+}
+
+.meme_name {
+    width: 100%;
+    font-size: min(max(3vw, 1.5rem), 3rem);
+    transition: .2s;
+    background-size: min(max(3vw, 1.4rem), 2.4rem) min(max(3vw, 1.4rem), 2.4rem);
+    background-repeat: no-repeat;
+    background-position: right center;
+    text-align: start;
+}
+
+.active {
+    display: none;
+}
+
+.active:checked+.meme_name {
+    color: #0767F9;
+    transition: .3s;
+}
+
+.active:checked+.meme {
+    border-color: #0767F9;
+    border-radius: min(max(1.25vw, .5rem), 1.5rem);
+}
+
+.meme_inner {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 0;
+    transition: all 1s ease-out;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.meme_inner:active {
+    border-color: black;
+}
+
+.active:checked~.meme_inner {
+  height: min(max(35.24vw, 100%), 35.24vw);
+  opacity: 1;
+  transition: all 1.0s ease-in;
+}
+
