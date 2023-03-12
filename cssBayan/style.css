@@ -12,17 +12,15 @@ html {
     overflow: auto;
   }
 
-html::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-  }
-  
-
 .main {
     margin: 0 auto;
     background-color: white;
     max-width: 65vh;
-    max-width: 1200px;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .title {
@@ -35,8 +33,6 @@ html::-webkit-scrollbar {
     flex-wrap: wrap;
 }
 
-
-
 .meme_name {
     width: 100%;
     font-size: min(max(3vw, 1.5rem), 3rem);
@@ -45,6 +41,7 @@ html::-webkit-scrollbar {
     background-repeat: no-repeat;
     background-position: right center;
     text-align: start;
+    color: #0767F9;
 }
 
 .active {
@@ -52,13 +49,8 @@ html::-webkit-scrollbar {
 }
 
 .active:checked+.meme_name {
-    color: #0767F9;
+    color: black;
     transition: .3s;
-}
-
-.active:checked+.meme {
-    border-color: #0767F9;
-    border-radius: min(max(1.25vw, .5rem), 1.5rem);
 }
 
 .meme_inner {
@@ -69,10 +61,6 @@ html::-webkit-scrollbar {
     transition: all 1s ease-out;
     overflow: hidden;
     opacity: 0;
-}
-
-.meme_inner:active {
-    border-color: black;
 }
 
 .active:checked~.meme_inner {
@@ -86,7 +74,6 @@ html::-webkit-scrollbar {
     max-width: 100%;
     height: auto;
 }
-
 
 .meme:active>.meme_image {}
 
@@ -105,8 +92,8 @@ html::-webkit-scrollbar {
       transition: all .7s ease-in;
     }
 
-    .memes_row:hover .mem__title {
-        color: #0767F9;
+    .memes_row:hover .meme_name {
+        color: black;
         transition: .5s;
       }
     }
