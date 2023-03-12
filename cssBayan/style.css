@@ -24,7 +24,7 @@ html::-webkit-scrollbar {
 }
 
 .title {
-    text-align: left;
+    text-align: start;
     font-weight: bold;
     font-size: 3vw;
     margin: 0;
