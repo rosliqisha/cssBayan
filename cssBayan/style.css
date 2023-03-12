@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: bisque;
+    max-width: 100vw;
+}
+
+html {
+    overflow: auto;
+  }
+
+.main {
+    margin: 0 auto;
+    max-width: 65vh;
+    margin-top: 1em;
+}
+
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.title {
+    text-align: start;
+    font-weight: bold;
+    font-size: 3vw;
+    margin: 0;
+}
+
+.marker {
+  height: 1mm;
+  background-color: black;
+  margin: 0;
+}
+
+.memes_row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.meme_name {
+    width: 100%;
+    font-size: 2rem;
+    transition: .2s;
+    text-align: start;
+    color: #0767F9;
+}
+
+.active {
+    display: none;
+}
+
+.active:checked~.meme_name {
+    color: black;
+    transition: .3s;
+}
+
+.meme_inner {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    height: 0;
+    transition: all 1s ease-out;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.active:checked~.meme_inner {
+  height: min(max(35.24vw, 100%), 35.24vw);
+  opacity: 1;
+  transition: all 1.0s ease-in;
+}
+
+.meme_image {
+    padding: min(max(1.25vw, .5rem), 1.5rem);
+    max-width: 60%;
+}
+
+.meme:active>.meme_image {}
+
+@media (min-width: 100px) {
+    .memes_row:hover {
+      cursor: pointer;
+    }
+  
+    .meme:hover {
+      cursor: pointer;
+    }
+  
+    .meme:hover>.meme_inner {
+      height: min(max(35.24vw, 100%), 35.24vw);
+      opacity: 1;
+      transition: all .7s ease-in;
+    }
+
+    .memes_row:hover .meme_name {
+        color: black;
+        transition: .5s;
+      }
+    }
